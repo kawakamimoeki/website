@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+const pages = import.meta.glob('./*.md', { eager: true });
 ---
 
 <Layout title="Kawakami Moeki">
@@ -15,131 +16,11 @@ import Card from '../components/Card.astro';
     </ul>
 		<p>I'm interested in the following topics.</p>
 		<ul class="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-7 gap-2">
-			<Card
-				title="Ruby on Rails"
-				url="Ruby_on_Rails"
-				img="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Ruby_On_Rails_Logo.svg/1024px-Ruby_On_Rails_Logo.svg.png"
-			/>
-			<Card
-				title="DHH"
-				url="DHH"
-				img="https://dhh.dk/images/race-shot-2.jpg"
-			/>
-			<Card
-				title="細野晴臣"
-				url="細野晴臣"
-				img="https://hosonoharuomi.jp/wp-content/uploads/2016/11/philharmony.jpg"
-			/>
-			<Card
-				title="オープンソース"
-				url="オープンソース"
-				img=""
-			/>
-			<Card
-        title="アラン・ケイ"
-				url="アラン・ケイ"
-				img="https://aes2.org/wp-content/uploads/2023/08/Alan_Kay_Photo.jpg.webp"
-			/>
-      <Card
-				title="Whole Earth Catalog"
-				url="Whole_Earth_Catalog"
-				img="https://greenz.jp/main/wp-content/uploads/2009/03/090311_01.jpg"
-			/>
-      <Card
-				title="ダグラス・エンゲルバート"
-				url="ダグラス・エンゲルバート"
-        img="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Douglas_Engelbart_in_2008.jpg/400px-Douglas_Engelbart_in_2008.jpg"
-      />
-			<Card
-				title="オブジェクトはコンピュータ"
-				url="オブジェクトはコンピュータ"
-				img=""
-			/>
-      <Card
-				title="Common Crawl"
-				url="Common_Crawl"
-				img="https://cdn.prod.website-files.com/6479b8d98bf5dcb4a69c4f31/649b5869af56f6df617cfb1f_CC_Logo_Blue_Auto.svg"
-			/>
-			<Card
-				title="使い易さが大事だとしたら、大人もいまだ三輪車に乗っているに違いない"
-				url="使い易さが大事だとしたら、大人もいまだ三輪車に乗っているに違いない"
-				img=""
-			/>
-      <Card
-				title="GitHub Archive Program"
-				url="GitHub_Archive_Program"
-				img="https://github.blog/jp/wp-content/uploads/sites/2/2020/07/Pic2.jpeg?w=2048"
-			/>
-			<Card
-				title="モーリス・ラヴェル"
-				url="モーリス・ラヴェル"
-				img="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Maurice_Ravel_1925.jpg/440px-Maurice_Ravel_1925.jpg"
-			/>
-			<Card
-				title="巨人の肩の上"
-				url="巨人の肩の上"
-				img="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Orion_aveugle_cherchant_le_soleil.jpg/440px-Orion_aveugle_cherchant_le_soleil.jpg"
-			/>
-			<Card
-				title="2024"
-				url="2024"
-				img=""
-			/>
-			<Card
-				title="イマジニアリング"
-				url="イマジニアリング"
-				img="https://dtimes.jp/wp-content/uploads/2020/06/tis-102-4_2164d983.jpeg"
-			/>
-      <Card
-				title="Macintosh"
-				url="Macintosh"
-				img="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Macintosh_128k_transparency.png/440px-Macintosh_128k_transparency.png"
-			/>
-			<Card
-				title="グループシンク"
-				url="グループシンク"
-				img=""
-			/>
-			<Card
-				title="iMac"
-				url="iMac"
-				img="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/IMac_Bondi_Blue.jpg/440px-IMac_Bondi_Blue.jpg"
-			/>
-      <Card
-				title="2001年宇宙の旅"
-				url="2001年宇宙の旅"
-				img="https://eiga.k-img.com/images/movie/22530/photo/2e767b4aa2e0aee2/640.jpg?1537511952"
-			/>
-			<Card
-				title="アポロ11号"
-				url="アポロ11号"
-				img="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Aldrin_Apollo_11_original.jpg/520px-Aldrin_Apollo_11_original.jpg"
-			/>
-      <Card
-				title="カウンターカルチャー"
-				url="カウンターカルチャー"
-				img=""
-			/>
-      <Card
-				title="パーキンソンの法則"
-				url="パーキンソンの法則"
-				img="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Cyril_Northcote_Parkinson_%281961%29.jpg/400px-Cyril_Northcote_Parkinson_%281961%29.jpg"
-			/>
-			<Card
-				title="リチャード・ストールマン"
-				url="リチャード・ストールマン"
-				img="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Richard_Stallman_-_Fête_de_l%27Humanité_2014_-_010.jpg/440px-Richard_Stallman_-_Fête_de_l%27Humanité_2014_-_010.jpg"
-			/>
-			<Card
-				title="Alto"
-				url="Alto"
-				img="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Xerox_Alto_mit_Rechner.JPG/480px-Xerox_Alto_mit_Rechner.JPG"
-			/>
-			<Card
-				title="春の祭典"
-				url="春の祭典"
-				img="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/RiteofSpringDancers.jpg/640px-RiteofSpringDancers.jpg"
-			/>
+			{Object.keys(pages).map((name: string) => {
+				const page = pages[name] as any;
+				const image = page.rawContent().match(/!\[.*?\]\((.*?)\)/)?.[1];
+				return <Card title={page.url} url={page.url} img={image} />
+			})}
 		</ul>
 		<p>&copy; 2024 Moeki Kawakami. All rights reserved.</p>
 	</main>
