@@ -19,7 +19,7 @@ const pages = import.meta.glob('./*.md', { eager: true });
 			{Object.keys(pages).map((name: string) => {
 				const page = pages[name] as any;
 				const image = page.rawContent().match(/!\[.*?\]\((.*?)\)/)?.[1];
-				return <Card title={page.url.split('/').pop()} url={page.url} img={image} />
+				return <Card title={page.url.split('/').pop().replaceAll("_", " ")} url={page.url} img={image} />
 			})}
 		</ul>
 		<p>&copy; 2024 Moeki Kawakami. All rights reserved.</p>
