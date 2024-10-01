@@ -1,3 +1,7 @@
+---
+layout: ../layouts/Layout.astro
+---
+
 # DHH
 
 [https://dhh.dk/](https://dhh.dk/)

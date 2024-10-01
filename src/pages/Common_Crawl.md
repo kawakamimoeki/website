@@ -1,3 +1,7 @@
+---
+layout: ../layouts/Layout.astro
+---
+
 # Common Crawl
 
 [https://commoncrawl.org/](https://commoncrawl.org/)

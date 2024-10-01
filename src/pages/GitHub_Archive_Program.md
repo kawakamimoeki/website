@@ -1,3 +1,7 @@
+---
+layout: ../layouts/Layout.astro
+---
+
 # GitHub Archive Program
 
 ![GitHub Archive Program](https://github.blog/jp/wp-content/uploads/sites/2/2020/07/Pic2.jpeg?w=2048)
